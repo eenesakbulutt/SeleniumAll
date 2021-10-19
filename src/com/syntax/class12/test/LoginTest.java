@@ -1,7 +1,7 @@
 package com.syntax.class12.test;
 
 import com.syntax.class12.pages.LoginPage;
-import sun.jvm.hotspot.debugger.cdbg.BaseClass;
+import com.syntax.class12.testbase.BaseClass;
 
 public class LoginTest {
 
