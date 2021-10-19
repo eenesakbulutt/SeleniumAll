@@ -1,0 +1,84 @@
+Selenium Class 3
+
+Why do we need Xpath or Css Selector?
+-- developers will not provide all the locators in html
+-- by using xpath and css selector we can identify elements with any given attribute
+
+What is an Xpath?
+xpath is like a query language which helps us to identify elements
+uniquely on the web page
+
+Types of Xpath:
+Absolute Xpath --> starts from the starting node in html
+                    it always starts with single slash (/)
+                    e.g /html/body/div/div/div
+
+Relative Xpath --> starts from any node in html
+                    it starts with double slash (//)
+
+Syntax for relative xpath:
+//tagname[@attribute = 'attribute value']
+
+Example: //input[@id = 'email']
+
+Identifying elements by its text:
+//tagname[text() = 'text value']
+
+//a[text() = 'Create New Account']
+
+identifying elements by using contains method:
+//tagname[contains(@attribute, 'partial attribute value')]
+
+example: //input[contains(@placeholder, 'Email')]
+
+Starts-with will identify the element with starting partial value
+//tagname[starts-with(@attribute, 'partial starting attribute value')]
+
+example: //button[starts-with(@data-testid, 'royal')]
+            //button[starts-with(text(), 'Log')]
+
+Ends-with was used in xpath 1.0, we are using 2.0 and this method is not available
+
+<div> -- division
+<img> -- image
+<h> -- header
+<p> -- paragraph
+<li> -- list
+<ul> -- unordered list
+<ol> -- ordered list
+
+
+Advanced Xpath
+is based on parent and child, sibling relationships
+
+identifying elements by following sibling
+//tagname[@attribute = 'attribute value']/following-sibling::tagname
+
+//input[@id = 'calFromDate']/following-sibling::img
+
+identifying elements by preceding sibling
+//tagname[@attribute = 'attribute value']/preceding-sibling::tagname
+
+//span[text() = '& Orders']/preceding-sibling::span
+
+identifying element parents
+//tagname[@attribute = 'attribute value']/parent::parentTagname
+
+//span[text() = '& Orders']/parent::a
+
+identifying element ancestors
+//tagname[@attribute = 'attribute value']/ancestor::ancestorTagname
+
+//input[@id = 'email']/ancestor::form
+
+identifying element by index
+(//img[@class = 'ui-datepicker-trigger'])[2]
+
+
+HW
+Navigate to http://syntaxprojects.com
+Click on start practicing
+click on simple form demo
+enter any text on first text box
+click on show message
+quit the browser
